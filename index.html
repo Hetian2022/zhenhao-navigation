@@ -1,275 +1,452 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>侦豪 · 中转入口</title>
-    <style>
-        :root {
-            --bg: #f5f2f7;
-            --text: #211828;
-            --muted: #746b7d;
-            --card: rgba(255, 255, 255, 0.68);
-            --line: rgba(255, 255, 255, 0.55);
-            --shadow: 0 24px 70px rgba(111, 80, 135, 0.14);
-            --gradient: linear-gradient(180deg, #7c4bd0 0%, #c254c8 38%, #ff4f86 76%, #ffd2c3 100%);
-            --chip: rgba(255, 255, 255, 0.15);
-        }
+    <meta
+      name="description"
+      content="侦豪 ZhenHao.io · Web3 聚合导航。探索空投活动、链上工具、行业资讯与交易平台，一站连接你的 Web3 世界。"
+    />
+    <meta name="theme-color" content="#0b0c0b" />
+    <meta name="color-scheme" content="dark light" />
+    <title>侦豪 ZhenHao.io · 连接你的 Web3 世界</title>
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <script>
+      try {
+        if (localStorage.getItem("zhenhao-theme") === "light")
+          document.documentElement.dataset.theme = "light";
+      } catch (_) {
+        /* Storage is optional. */
+      }
+    </script>
+  </head>
+  <body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="svg-definitions"
+      aria-hidden="true"
+    >
+      <defs>
+        <symbol id="arrow-up-right" viewBox="0 0 24 24">
+          <path d="M6 18 18 6M6 6h12v12" />
+        </symbol>
+        <symbol id="arrow-right" viewBox="0 0 24 24">
+          <path d="M4 12h16m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="brand-mark" viewBox="0 0 36 36">
+          <path d="M5 6h26v7L15 25h16v5H5v-7l16-12H5Z" fill="currentColor" />
+        </symbol>
+      </defs>
+    </svg>
+    <a class="skip-link" href="#explore">跳转到主要内容</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#explore" aria-label="侦豪 ZhenHao.io 首页">
+          <svg class="brand-mark" aria-hidden="true">
+            <use href="#brand-mark" />
+          </svg>
+          <span class="brand-name">ZHENHAO<span>.io</span></span>
+        </a>
+        <nav class="header-nav" aria-label="主导航">
+          <a href="#explore">探索 Web3</a>
+          <a href="#exchanges">交易平台</a>
+          <a href="#community">加入社区</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="切换到浅色模式"
+            title="切换到浅色模式"
+            aria-pressed="false"
+          >
+            <svg class="icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.5" />
+              <path
+                d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42m0-14.14-1.42 1.42m-11.3 11.3-1.42 1.42"
+              />
+            </svg>
+            <svg class="icon moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.8 13.2A9 9 0 0 1 10.8 3.2 9 9 0 1 0 20.8 13.2Z" />
+            </svg>
+          </button>
+          <a
+            class="official-link"
+            href="https://zhenhaohub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >侦豪官网<svg class="icon" aria-hidden="true">
+              <use href="#arrow-up-right" /></svg
+          ></a>
+        </div>
+      </div>
+    </header>
 
-        * {
-            box-sizing: border-box;
-        }
+    <main class="container" id="explore">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR GATEWAY TO WEB3</p>
+          <h1 id="hero-title">Web3 世界，<br /><span>一站直达。</span></h1>
+          <p class="hero-description">
+            精选空投资讯、链上工具与交易平台。<br />连接每一个机会，让探索更简单。
+          </p>
+          <div class="hero-actions">
+            <a
+              class="primary-button"
+              id="enterBtn"
+              href="https://zhenhao.io/Home?soure=zh6.one"
+              target="_blank"
+              rel="noopener noreferrer"
+              >进入主站<svg class="icon" aria-hidden="true">
+                <use href="#arrow-right" /></svg
+            ></a>
+            <span class="hero-hint"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" /></svg
+              >每日发现，持续更新</span
+            >
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg
+            viewBox="0 0 460 365"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient
+                id="grid-fade"
+                x1="230"
+                y1="190"
+                x2="230"
+                y2="365"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="currentColor" stop-opacity=".6" />
+                <stop offset="1" stop-color="currentColor" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient
+                id="edge-light"
+                x1="139"
+                y1="76"
+                x2="318"
+                y2="253"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#d3ff88" />
+                <stop offset="1" stop-color="#719e32" />
+              </linearGradient>
+              <linearGradient
+                id="cube-top"
+                x1="150"
+                y1="65"
+                x2="298"
+                y2="162"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#c3f85c" stop-opacity=".22" />
+                <stop offset="1" stop-color="#c3f85c" stop-opacity=".04" />
+              </linearGradient>
+            </defs>
+            <g
+              color="var(--art-line)"
+              stroke="url(#grid-fade)"
+              stroke-width=".7"
+            >
+              <path
+                d="m-10 262 240-139 240 139M-10 289l240-139 240 139M-10 316l240-139 240 139M-10 343l240-139 240 139M-10 370l240-139 240 139"
+              />
+              <path
+                d="m-10 262 240 139 240-139M-10 235l240 139 240-139M-10 208l240 139 240-139M-10 181l240 139 240-139M-10 154l240 139 240-139"
+              />
+            </g>
+            <g class="art-float">
+              <path
+                d="m108 233 122-70 122 70v17l-122 71-122-71Z"
+                fill="var(--art-side)"
+                stroke="var(--art-line)"
+              />
+              <path
+                d="m108 233 122 71 122-71M230 304v17"
+                stroke="var(--art-line)"
+              />
+              <path
+                d="m122 206 108-62 108 62v17l-108 62-108-62Z"
+                fill="var(--art-face)"
+                stroke="var(--art-line)"
+              />
+              <path
+                d="m122 206 108 62 108-62M230 268v17"
+                stroke="var(--art-line)"
+              />
+              <path
+                d="m138 108 92-53 92 53v109l-92 53-92-53Z"
+                fill="var(--art-side)"
+                stroke="url(#edge-light)"
+                stroke-width="1.2"
+              />
+              <path d="m138 108 92 53 92-53-92-53Z" fill="var(--art-top)" />
+              <path
+                d="m138 108 92 53 92-53-92-53Z"
+                fill="url(#cube-top)"
+                stroke="url(#edge-light)"
+                stroke-width="1.2"
+              />
+              <path
+                d="m138 108 92 53v109l-92-53Z"
+                fill="var(--art-face)"
+                stroke="url(#edge-light)"
+                stroke-width="1.2"
+              />
+              <path d="m153 134 62 36v71l-62-36Z" stroke="var(--art-line)" />
+              <path
+                d="m165 156 37 21v9l-24 13 24 14v8l-37-21v-9l24-13-24-14Z"
+                fill="var(--accent)"
+              />
+              <path
+                d="m247 166 58-34m-58 49 58-34m-58 49 58-34m-58 49 58-34m-58 49 58-34"
+                stroke="var(--art-line)"
+                stroke-width=".8"
+              />
+              <path
+                d="m197 93 33-19 33 19-33 19Z"
+                stroke="var(--accent)"
+                stroke-width=".8"
+              />
+              <path
+                d="M230 74v38m-33-19h66"
+                stroke="var(--accent)"
+                stroke-opacity=".4"
+                stroke-width=".7"
+              />
+              <path
+                d="M329 93h20m-10-10v20"
+                stroke="var(--accent)"
+                stroke-width="1.2"
+              />
+              <path d="M112 166h8m-4-4v8" stroke="var(--art-line)" />
+            </g>
+            <path
+              d="M77 107V78h29m248 194v29h-29"
+              stroke="var(--art-line)"
+              stroke-width=".8"
+            />
+            <circle cx="352" cy="180" r="2" fill="var(--accent-text)" />
+            <circle cx="101" cy="271" r="2" fill="var(--art-line)" />
+          </svg>
+          <div class="art-caption">ONE CONNECTION. INFINITE POSSIBILITIES.</div>
+        </div>
+      </section>
 
-        html,
-        body {
-            margin: 0;
-            min-height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background:
-                radial-gradient(circle at top left, rgba(124, 75, 208, 0.10), transparent 32%),
-                radial-gradient(circle at bottom right, rgba(255, 79, 134, 0.08), transparent 28%),
-                var(--bg);
-            color: var(--text);
-        }
+      <div class="topics" aria-label="主站内容分类">
+        <span class="topics-label"
+          ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z" /></svg
+          >探索更多</span
+        >
+        <div class="topic-list">
+          <span class="topic">空投活动</span><span class="topic">主网生态</span
+          ><span class="topic">链上工具</span
+          ><span class="topic">行业资讯</span>
+        </div>
+        <span class="topics-note">CURATED FOR YOU ↗</span>
+      </div>
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .wrap {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .panel {
-            width: 100%;
-            max-width: 460px;
-            background: var(--gradient);
-            border-radius: 32px;
-            padding: 22px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .panel::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 24%);
-            pointer-events: none;
-        }
-
-        .card {
-            position: relative;
-            z-index: 1;
-            border-radius: 26px;
-            background: rgba(16, 20, 36, 0.20);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            padding: 28px 24px 24px;
-            text-align: center;
-        }
-
-        .logo {
-            width: 84px;
-            height: 84px;
-            margin: 0 auto 18px;
-            border-radius: 24px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.46));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 10px 26px rgba(36, 16, 41, 0.12);
-            color: #6f43c8;
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
-
-        h1 {
-            margin: 0;
-            color: #fff;
-            font-size: 32px;
-            line-height: 1.2;
-            letter-spacing: -0.6px;
-        }
-
-        .desc {
-            margin: 14px auto 0;
-            max-width: 320px;
-            color: rgba(255, 255, 255, 0.88);
-            font-size: 15px;
-            line-height: 1.8;
-        }
-
-        .group {
-            margin-top: 24px;
-            display: grid;
-            gap: 14px;
-        }
-
-        .btn {
-            height: 56px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-weight: 700;
-            transition: transform .18s ease, opacity .18s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-1px);
-        }
-
-        .btn-primary {
-            background: #141018;
-            color: #fff;
-            box-shadow: 0 14px 30px rgba(20, 16, 24, 0.24);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.14);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        .links {
-            margin-top: 18px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .chip {
-            padding: 10px 14px;
-            border-radius: 999px;
-            background: var(--chip);
-            color: rgba(255, 255, 255, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            font-size: 14px;
-        }
-
-        .foot {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            margin-top: 18px;
-            color: rgba(255, 255, 255, 0.78);
-            font-size: 13px;
-            line-height: 1.7;
-        }
-
-        .is-have-image>img {
-            width: 30px;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
-
-        @media (max-width: 520px) {
-            .wrap {
-                padding: 14px;
-            }
-
-            .panel {
-                padding: 14px;
-                border-radius: 24px;
-            }
-
-            .card {
-                padding: 24px 18px 20px;
-                border-radius: 22px;
-            }
-
-            .logo {
-                width: 72px;
-                height: 72px;
-                border-radius: 20px;
-                font-size: 24px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            .desc {
-                font-size: 14px;
-            }
-
-            .btn {
-                height: 52px;
-                font-size: 15px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <main class="wrap">
-        <section class="panel">
-            <div class="card">
-                <img class="logo" src="./images/logo.webp" />
-                <h1>ZhenHao.io</h1>
-                <p class="desc">
-                    侦豪 · Web3 聚合导航,本站每日更新Web3空投活动资讯,并聚合了丰富的圈内工具,意在让诸位体验最便利的一站式Web3服务
-                </p>
-
-                <div class="group">
-                    <a class="btn btn-primary" id="enterBtn" href="https://zhenhao.io/Home?soure=zh6.one"
-                        target="_blank" rel="noreferrer">进入主站</a>
-
-                    <a class="btn btn-secondary is-have-image" href="https://www.promooboost.com/join/ZHENHAO8"
-                        target="_blank" rel="noreferrer">
-                        <img src="./images/okx.webp" alt=""><span>点击下载欧易</span>
-                    </a>
-                    <a class="btn btn-secondary is-have-image" href="https://www.bsmkweb.cc/register?ref=ZHENHAO6"
-                        target="_blank" rel="noreferrer">
-                        <img src="./images/Binance.webp" alt=""><span>点击下载币安</span>
-                    </a>
-                    <a class="btn btn-secondary is-have-image" href="https://partner.bybit.com/b/ZHENHAO"
-                        target="_blank" rel="noreferrer">
-                        <img src="./images/Bybit.png" alt=""><span>点击下载Bybit</span>
-                    </a>
-                    <!-- <a class="btn btn-secondary is-have-image" href="https://www.gateport.business/share/ZHENHAOX"
-                        target="_blank" rel="noreferrer">
-                        <img src="./images/gate.webp" alt=""><span>点击下载XT</span>
-                    </a>
-                    <a class="btn btn-secondary is-have-image" href="https://www.bm-link.com/zh-CN/invite/zhenhao"
-                        target="_blank" rel="noreferrer">
-                        <img src="./images/BitMart.webp" alt=""><span>点击下载BitMart</span>
-                    </a> -->
-                    <a class="btn btn-secondary" href="https://zhenhaohub.com" target="_blank" rel="noreferrer">打开官网</a>
-                </div>
-
-                <div class="links">
-                    <a class="chip" href="https://t.me/ZHENHAO2026" target="_blank" rel="noreferrer">Telegram</a>
-                    <a class="chip" href="https://x.com/zhenhao2026" target="_blank" rel="noreferrer">X / Twitter</a>
-                </div>
+      <section
+        class="exchange-section"
+        id="exchanges"
+        aria-labelledby="exchange-title"
+      >
+        <div class="section-heading">
+          <h2 class="section-title" id="exchange-title">
+            交易平台<span>EXCHANGES</span>
+          </h2>
+          <p class="section-description">常用平台，快捷访问</p>
+        </div>
+        <div class="exchange-grid">
+          <a
+            class="exchange-card"
+            href="https://www.bsmkweb.cc/register?ref=ZHENHAO"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="访问 Binance 币安，注册或下载（新窗口）"
+          >
+            <div class="exchange-top">
+              <img
+                class="exchange-logo"
+                src="./images/Binance.webp"
+                alt=""
+                width="43"
+                height="43"
+              /><span class="exchange-index">01 /</span>
             </div>
-
-            <div class="foot">
-                侦豪 · Web3 聚合导航<br />
-                空投 / 主网 / 工具 / 交易所 / 资讯
+            <h3 class="exchange-name">Binance<small>币安</small></h3>
+            <p class="exchange-description">开启你的数字资产之旅</p>
+            <div class="exchange-bottom">
+              <span>注册 / 下载</span
+              ><svg class="icon" aria-hidden="true">
+                <use href="#arrow-up-right" />
+              </svg>
             </div>
-        </section>
+          </a>
+          <a
+            class="exchange-card"
+            href="https://www.mitxcqvwnhj.com/join/ZHENHAO6"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="访问 OKX 欧易，注册或下载（新窗口）"
+          >
+            <div class="exchange-top">
+              <img
+                class="exchange-logo"
+                src="./images/okx.webp"
+                alt=""
+                width="43"
+                height="43"
+              /><span class="exchange-index">02 /</span>
+            </div>
+            <h3 class="exchange-name">OKX<small>欧易</small></h3>
+            <p class="exchange-description">交易与 Web3 探索，一步连接</p>
+            <div class="exchange-bottom">
+              <span>注册 / 下载</span
+              ><svg class="icon" aria-hidden="true">
+                <use href="#arrow-up-right" />
+              </svg>
+            </div>
+          </a>
+
+          <a
+            class="exchange-card"
+            href="https://partner.bybit.com/b/LINKEX"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="访问 BYBIT，注册或下载（新窗口）"
+          >
+            <div class="exchange-top">
+              <img
+                class="exchange-logo"
+                src="./images/Bybit.png"
+                alt=""
+                width="43"
+                height="43"
+              /><span class="exchange-index">03 /</span>
+            </div>
+            <h3 class="exchange-name">BYBIT</h3>
+            <p class="exchange-description">发现更多数字资产交易选择</p>
+            <div class="exchange-bottom">
+              <span>注册 / 下载</span
+              ><svg class="icon" aria-hidden="true">
+                <use href="#arrow-up-right" />
+              </svg>
+            </div>
+          </a>
+
+          <a
+            class="exchange-card"
+            href="https://www.gatesites.cc/share/VFBAXVAKBW"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="访问 Gate，注册或下载（新窗口）"
+          >
+            <div class="exchange-top">
+              <img
+                class="exchange-logo"
+                src="./images/Gate.webp"
+                alt=""
+                width="43"
+                height="43"
+              /><span class="exchange-index">04 /</span>
+            </div>
+            <h3 class="exchange-name">GATE</h3>
+            <p class="exchange-description">竞速交易，即刻开始</p>
+            <div class="exchange-bottom">
+              <span>注册 / 下载</span
+              ><svg class="icon" aria-hidden="true">
+                <use href="#arrow-up-right" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="community"
+        id="community"
+        aria-labelledby="community-title"
+      >
+        <div>
+          <h2 class="community-title" id="community-title">
+            和同路人，一起探索。
+          </h2>
+          <p class="community-description">
+            加入侦豪社区，获取更多 Web3 动态与机会。
+          </p>
+        </div>
+        <div class="social-links">
+          <a
+            class="social-link"
+            href="https://t.me/Linkex2027"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m21 4-4 16-6-5-4 3 1-6 10-6-12 5-4-1Z" />
+              <path d="m8 12 3 3" /></svg
+            >Telegram<svg class="icon external-icon" aria-hidden="true">
+              <use href="#arrow-up-right" /></svg
+          ></a>
+          <a
+            class="social-link"
+            href="https://x.com/linkex2027"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 3h5l11 18h-5ZM20 3 4 21" /></svg
+            >X / Twitter<svg class="icon external-icon" aria-hidden="true">
+              <use href="#arrow-up-right" /></svg
+          ></a>
+        </div>
+      </section>
     </main>
-</body>
-<script>
-    const domain = window.location.hostname;
-    const url = new URL('https://zhenhao.io/Home');
 
-    url.searchParams.set('soure', domain);
+    <footer class="container site-footer">
+      <div class="footer-brand">
+        <span>侦豪 · Web3 聚合导航</span><i aria-hidden="true">/</i>©
+        <time id="year">2026</time> ZhenHao.io
+      </div>
+      <span class="footer-note">STAY CURIOUS. STAY ONCHAIN.</span>
+    </footer>
+    <script>
+      const domain = window.location.hostname;
+      const url = new URL("https://zhenhao.io/Home");
+      url.searchParams.set("soure", domain);
+      document.getElementById("enterBtn").href = url.toString();
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.getElementById('enterBtn').href = url.toString();
-</script>
-
+      const themeToggle = document.getElementById("themeToggle");
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      function updateThemeControl() {
+        const isLight = document.documentElement.dataset.theme === "light";
+        const label = isLight ? "切换到深色模式" : "切换到浅色模式";
+        themeToggle.setAttribute("aria-label", label);
+        themeToggle.setAttribute("title", label);
+        themeToggle.setAttribute("aria-pressed", String(isLight));
+        themeColor.setAttribute("content", isLight ? "#f7f8f4" : "#0b0c0b");
+      }
+      themeToggle.addEventListener("click", () => {
+        const theme =
+          document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+        try {
+          localStorage.setItem("zhenhao-theme", theme);
+        } catch (_) {
+          /* Storage is optional. */
+        }
+        updateThemeControl();
+      });
+      updateThemeControl();
+    </script>
+  </body>
 </html>
